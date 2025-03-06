@@ -1,0 +1,33 @@
+{
+  "name": "@reactmos/module-boilerplate",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "src/module.config.tsx",
+  "scripts": {
+    "dev": "reactmox dev",
+    "build": "reactmox build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react-router-dom": "^7.2.0",
+    "reactmos": "workspace:*"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@reactmos/cli": "workspace:*",
+    "@types/gapi.auth2": "0.0.61",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "eslint": "^9.20.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "hookable": "5.5.3",
+    "mobx": "^6.13.6",
+    "mobx-react-lite": "4.1.0",
+    "typescript": "~5.7.3",
+    "typescript-eslint": "^8.24.1",
+    "vite": "6.1.1"
+  }
+}

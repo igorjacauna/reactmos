@@ -1,0 +1,68 @@
+import { hooks } from 'reactmos';
+
+import moduleConfig from './src/module.config';
+import App from './src/App';
+
+<% if (hostConfig.extends && hostConfig.extends.length) { %>
+  <% hostConfig.extends.forEach(function(dep, index) { %>
+import depConfig<%= index %> from '<%= dep %>';
+  <% }); %>
+<% } %>
+
+let initialized = false;
+let routes = [];
+let menuEntries = [];
+let flags = [];
+
+export async function boot() {
+  await hooks.callHook('app:beforeBoot');
+  flags = [...(moduleConfig.flags || [])];
+  routes = (await Promise.resolve(moduleConfig.routes?.())) || [];
+  menuEntries = (await Promise.resolve(moduleConfig.menuEntries?.())) || [];
+  hooks.addHooks(moduleConfig.hooks);
+
+<% if (hostConfig.extends && hostConfig.extends.length) { %>
+  <% hostConfig.extends.forEach(function(dep, index) { %>
+  flags = flags.concat(depConfig<%= index %>.flags || []);
+
+  const depRoutes<%= index %> = (await Promise.resolve(depConfig<%= index %>.routes?.())) || [];
+  routes = routes.concat(depRoutes<%= index %>);
+
+  const depMenuEntries<%= index %> = (await Promise.resolve(depConfig<%= index %>.menuEntries?.())) || [];
+  menuEntries = menuEntries.concat(depMenuEntries<%= index %>);
+
+  hooks.addHooks(depConfig<%= index %>.hooks);
+
+  <% }); %>
+<% } %>
+  initialized = true;
+  await hooks.callHook('app:afterBoot');
+}
+
+export function getFlags() {
+  if (!initialized) {
+    throw new Error('Modules not initialized');
+  }
+  return flags;
+}
+
+export function getRoutes() {
+  if (!initialized) {
+    throw new Error('Modules not initialized');
+  }
+  return routes;
+}
+
+export function getMenuEntries() {
+  if (!initialized) {
+    throw new Error('Modules not initialized');
+  }
+  return menuEntries;
+}
+
+export function getRoot() {
+  return App;
+}
+
+boot();
+
