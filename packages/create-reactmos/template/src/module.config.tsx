@@ -1,5 +1,5 @@
-import { ModuleConfig } from 'reactmos';
 import React from 'react';
+import { ModuleConfig } from 'reactmos';
 
 const module: ModuleConfig = {
   moduleName: 'module-boilerplate',

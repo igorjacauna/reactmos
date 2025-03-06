@@ -52,11 +52,20 @@ importers:
         specifier: ^3.5.0
         version: 3.5.0(typescript@5.8.2)
 
+  packages/create-reactmos:
+    devDependencies:
+      citty:
+        specifier: ^0.1.6
+        version: 0.1.6
+      consola:
+        specifier: ^3.4.0
+        version: 3.4.0
+      unbuild:
+        specifier: ^3.5.0
+        version: 3.5.0(typescript@5.8.2)
+
   packages/module-boilerplate:
     dependencies:
-      react-router-dom:
-        specifier: ^7.2.0
-        version: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       reactmos:
         specifier: workspace:*
         version: link:../reactmos
@@ -64,12 +73,6 @@ importers:
       '@eslint/js':
         specifier: ^9.20.0
         version: 9.21.0
-      '@reactmos/cli':
-        specifier: workspace:*
-        version: link:../cli
-      '@types/gapi.auth2':
-        specifier: 0.0.61
-        version: 0.0.61
       '@types/react':
         specifier: ^19.0.10
         version: 19.0.10
@@ -88,15 +91,6 @@ importers:
       globals:
         specifier: ^15.15.0
         version: 15.15.0
-      hookable:
-        specifier: 5.5.3
-        version: 5.5.3
-      mobx:
-        specifier: ^6.13.6
-        version: 6.13.6
-      mobx-react-lite:
-        specifier: 4.1.0
-        version: 4.1.0(mobx@6.13.6)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       typescript:
         specifier: ~5.7.3
         version: 5.7.3
@@ -180,6 +174,9 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
       react-router:
+        specifier: ^7.2.0
+        version: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-router-dom:
         specifier: ^7.2.0
         version: 7.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
