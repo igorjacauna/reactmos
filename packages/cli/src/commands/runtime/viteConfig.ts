@@ -19,6 +19,7 @@ export async function createViteConfig(): Promise<InlineConfig> {
     envPrefix: 'APP_',
     optimizeDeps: {
       exclude: ['reactmos'],
+      include: ['react-router']
     },
   };
 }

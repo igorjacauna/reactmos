@@ -17,6 +17,12 @@ It is the core of application, the entrypoint for Vite
 
 This is what you have to write and extends others modules. See `module-example`
 
+Just run
+
+```
+pnpm create reactmos <module-name>
+```
+
 ## Roadmap
 
 - [x] Extends routes/pages

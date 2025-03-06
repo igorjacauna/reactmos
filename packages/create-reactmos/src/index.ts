@@ -1,7 +1,7 @@
 import { defineCommand, runMain } from "citty";
 import { execSync } from 'child_process';
 import { consola } from "consola";
-import { existsSync, mkdirSync, cpSync } from 'fs';
+import { existsSync, renameSync, mkdirSync, cpSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -38,6 +38,20 @@ const main = defineCommand({
     // Opção 2: Copiar arquivos locais de um template embutido
     const templateDir = join(__dirname, "../template");
     cpSync(templateDir, targetDir, { recursive: true });
+
+    const filesToRename = {
+      "_gitignore": ".gitignore",
+      "_npmrc": ".npmrc",
+    };
+  
+    Object.entries(filesToRename).forEach(([oldName, newName]) => {
+      const oldPath = join(targetDir, oldName);
+      const newPath = join(targetDir, newName);
+      
+      if (existsSync(oldPath)) {
+        renameSync(oldPath, newPath);
+      }
+    });
 
     consola.info("📦 Installing dependêncies...");
     execSync(`cd ${args.name} && pnpm install`, { stdio: "inherit" });
