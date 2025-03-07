@@ -1,74 +1,76 @@
 # Reactmos (REACT MOduleS)
 
-This is a small project more as a concept inspired in [Nuxt Layers](https://nuxt.com/docs/getting-started/layers) for React
+Reactmos is a small project, primarily a conceptual approach, inspired by [Nuxt Layers](https://nuxt.com/docs/getting-started/layers) for React.
 
-> [!NOTE]
-> This is a Work In Progress and works only for SPA
+> [!NOTE]  
+> This project is a Work In Progress and currently supports only Single Page Applications (SPA).
 
 ## CLI
 
-We have a CLI that helps to run dev server and build the final bundle
+We provide a CLI to help run the development server and build the final bundle.
 
 ## Reactmos
 
-It is the core of application, the entrypoint for Vite
+Reactmos serves as the core of the application and acts as the entry point for Vite.
 
 ### Modules
 
-This is what you will work and write your application and extends others modules
+This is where you will develop your application and extend other modules.
 
-Just run
+To create a new module, simply run:
 
-```
+```sh
 pnpm create reactmos <module-name>
 ```
 
-### Extends
+### Extending Modules
 
-To extends other modules, just add the package name in `extends` in `module.config.ts`
+To extend another module, just add its package name to the `extends` field in `module.config.ts`:
 
 ```ts
 export default {
-  extends: ['module-to-extends']
+  extends: ['module-to-extend']
 }
 ```
 
-### Hooks
+### Lifecycle Hooks
 
-We have some life cycle hooks
+Reactmos provides several lifecycle hooks:
 
-1. `app:afterBoot` - Called after the CLI registered all modules routes and hooks. This is used by the entrypoint to mount the application
-2. `app:init` - Called before the entrypoint get the `App.tsx` used as root in application
-3. `app:beforeRender` - Called after get the `App.tsx` and before call `render` from `createRoot`
-4. `app:afterRender` - Called after the `render` from `createRoot`
+1. **`app:afterBoot`** - Called after the CLI registers all module routes and hooks. Used by the entry point to mount the application.
+2. **`app:init`** - Called before the entry point retrieves `App.tsx`, which serves as the root of the application.
+3. **`app:beforeRender`** - Called after `App.tsx` is retrieved but before calling `render` from `createRoot`.
+4. **`app:afterRender`** - Called after `createRoot` executes `render`.
 
-You can use `app:afterBoot` to create a new hook to be used in your application:
+You can use `app:afterBoot` to create new hooks within your application:
 
 ```ts
 import { hooks } from 'reactmos';
 
-// Hook on 'hello'
-hooks.hook('hello', () => { console.log('Hello World' )})
+// Register a new hook called 'hello'
+hooks.hook('hello', () => {
+  console.log('Hello, World!');
+});
 
-// Call 'hello' hook
-hooks.callHook('hello')
+// Call the 'hello' hook
+hooks.callHook('hello');
 ```
 
-See [hookable](https://github.com/unjs/hookable)
+For more details, see [hookable](https://github.com/unjs/hookable).
 
 ### Components
 
-`reactmos` provides a `<Pages />` component that represents all registered routes. It can be used in `App.tsx` root component
+Reactmos provides a `<Pages />` component that represents all registered routes. You can use it in your `App.tsx` root component.
 
-### Functions
+### Utility Functions
 
-`reactmos` also provides:
+Reactmos also provides the following functions:
 
-1. `getRoutes` - Get all routes registered
-2. `getRoot` - Get the `App.tsx` root component
+1. **`getRoutes`** - Retrieves all registered routes.
+2. **`getRoot`** - Returns the `App.tsx` root component.
 
 ## Roadmap
 
-- [x] Extends routes/pages
-- [ ] Extends public dir
-- [ ] Any thing else to extends??
+- [x] Support for extending routes/pages  
+- [ ] Support for extending the `public` directory  
+- [ ] Additional extension capabilities?  
