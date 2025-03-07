@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.20.0",
-    "@reactmos/cli": "^0.1.2",
+    "@reactmos/cli": "^0.2.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "eslint": "^9.20.1",

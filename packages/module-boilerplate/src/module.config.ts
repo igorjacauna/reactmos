@@ -1,5 +1,5 @@
-import React from 'react';
 import { ModuleConfig } from 'reactmos';
+import Welcome from './pages/Welcome';
 
 const module: ModuleConfig = {
   moduleName: 'module-boilerplate',
@@ -7,7 +7,7 @@ const module: ModuleConfig = {
     return [
       {
         path: '/welcome',
-        Component: React.lazy(() => import('./pages/Welcome')),
+        Component: Welcome,
       },
     ];
   },
@@ -15,7 +15,8 @@ const module: ModuleConfig = {
     'app:beforeRender': () => {
       console.log('Before render')
     }
-  }
+  },
+  extends: []
 }
 
 export default module

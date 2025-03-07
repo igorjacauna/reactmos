@@ -32,9 +32,9 @@ importers:
       ejs:
         specifier: ^3.1.10
         version: 3.1.10
-      jiti:
-        specifier: ^2.4.2
-        version: 2.4.2
+      esbuild:
+        specifier: ^0.25.0
+        version: 0.25.0
       pathe:
         specifier: ^2.0.3
         version: 2.0.3
