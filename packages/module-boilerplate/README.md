@@ -1,1 +1,0 @@
-# Module boilerplate for Reactmos

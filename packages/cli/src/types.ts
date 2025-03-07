@@ -1,7 +1,6 @@
 import type { RouteObject } from "react-router";
 
 export type Hooks = {
-  'app:beforeBoot': () => void;
   'app:afterBoot': () => void;
   'app:init': () => void;
   'app:beforeRender': () => void;

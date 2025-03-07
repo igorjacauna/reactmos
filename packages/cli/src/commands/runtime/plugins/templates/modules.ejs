@@ -15,7 +15,6 @@ let menuEntries = [];
 let flags = [];
 
 export async function boot() {
-  await hooks.callHook('app:beforeBoot');
   routes = (await Promise.resolve(moduleConfig.routes?.())) || [];
   hooks.addHooks(moduleConfig.hooks);
 
