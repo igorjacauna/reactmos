@@ -23,6 +23,30 @@ To create a new module, simply run:
 pnpm create reactmos <module-name>
 ```
 
+#### Configuration
+
+See more in `packages/cli/src/types.ts`
+
+```ts
+const moduleConfig: ModuleConfig = {
+  moduleName: 'module-boilerplate',
+  root: App, // To be used as root in component. Optional
+  routes: () => {
+    return [
+      {
+        path: '/welcome',
+        Component: Welcome,
+      },
+    ];
+  },
+  hooks: {
+    'app:beforeRender': () => {
+      console.log('Before render')
+    }
+  }
+}
+```
+
 ### Extending Modules
 
 To extend another module, just add its package name to the `extends` field in `module.config.ts`:

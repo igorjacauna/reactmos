@@ -1,7 +1,6 @@
-import { hooks } from 'reactmos';
+import { hooks, App } from 'reactmos';
 
 import moduleConfig from './src/module.config';
-import App from './src/App';
 
 <% if (extendModules && extendModules.length) { %>
   <% extendModules.forEach(function(dep, index) { %>
@@ -11,25 +10,23 @@ import depConfig<%= index %> from '<%= dep %>';
 
 let initialized = false;
 let routes = [];
-let menuEntries = [];
-let flags = [];
+let root = null;
 
 export async function boot() {
   routes = (await Promise.resolve(moduleConfig.routes?.())) || [];
   hooks.addHooks(moduleConfig.hooks);
+  root = moduleConfig.root;
 
 <% if (extendModules && extendModules.length) { %>
   <% extendModules.forEach(function(dep, index) { %>
-  flags = flags.concat(depConfig<%= index %>.flags || []);
-
   const depRoutes<%= index %> = (await Promise.resolve(depConfig<%= index %>.routes?.())) || [];
   routes = routes.concat(depRoutes<%= index %>);
 
-  const depMenuEntries<%= index %> = (await Promise.resolve(depConfig<%= index %>.menuEntries?.())) || [];
-  menuEntries = menuEntries.concat(depMenuEntries<%= index %>);
-
   hooks.addHooks(depConfig<%= index %>.hooks);
 
+  if (!root) {
+    root = depConfig<%= index %>.root;
+  }
   <% }); %>
 <% } %>
   initialized = true;
@@ -44,7 +41,7 @@ export function getRoutes() {
 }
 
 export function getRoot() {
-  return App;
+  return root || App;
 }
 
 boot();

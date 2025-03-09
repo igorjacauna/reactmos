@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import type { RouteObject } from "react-router";
 
 export type Hooks = {
@@ -9,6 +10,7 @@ export type Hooks = {
 
 export type ModuleConfig = {
   moduleName: string;
+  root?: () => JSX.Element;
   routes?: () => (RouteObject[] | Promise<RouteObject[]>);
   extends?: string[];
   hooks?: Partial<Hooks>;
