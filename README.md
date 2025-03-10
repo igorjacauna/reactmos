@@ -30,7 +30,14 @@ See more in `packages/cli/src/types.ts`
 ```ts
 const moduleConfig: ModuleConfig = {
   moduleName: 'module-boilerplate',
-  root: App, // To be used as root in component. Optional
+  /**
+   * Root component of the application.
+   * If not provided, Reactmos will use the root component
+   * from the first extended module that defines one.
+   * If no extended module provides a root component,
+   * the default from the entry point will be used.
+   */
+  root: App,
   routes: () => {
     return [
       {
@@ -54,6 +61,14 @@ To extend another module, just add its package name to the `extends` field in `m
 ```ts
 export default {
   extends: ['module-to-extend']
+}
+```
+
+You can also use relative path to other module directory
+
+```ts
+export default {
+  extends: ['../module-to-extend']
 }
 ```
 

@@ -19,7 +19,12 @@ export async function getExtends(parser: ParseAst) {
     ? extractExtendsFromObject(exportDefaultObject)
     : [];
 
-  return extendsArray;
+  return extendsArray.map((ext) => {
+    if (ext.startsWith('.')) {
+      return resolve(process.cwd(), ext, 'src/module.config');
+    }
+    return ext;
+  });
 }
 
 function extractExtendsFromObject(obj: any): string[] {

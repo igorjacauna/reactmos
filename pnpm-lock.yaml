@@ -21,18 +21,98 @@ importers:
         specifier: ^5.8.2
         version: 5.8.2
 
-  .playground:
+  .playground/module-a:
     dependencies:
       reactmos:
         specifier: workspace:*
-        version: link:../packages/reactmos
+        version: link:../../packages/reactmos
     devDependencies:
       '@eslint/js':
         specifier: ^9.20.0
         version: 9.21.0
       '@reactmos/cli':
         specifier: workspace:*
-        version: link:../packages/cli
+        version: link:../../packages/cli
+      '@types/react':
+        specifier: ^19.0.10
+        version: 19.0.10
+      '@types/react-dom':
+        specifier: ^19.0.4
+        version: 19.0.4(@types/react@19.0.10)
+      eslint:
+        specifier: ^9.20.1
+        version: 9.21.0(jiti@2.4.2)
+      eslint-plugin-react-hooks:
+        specifier: ^5.1.0
+        version: 5.2.0(eslint@9.21.0(jiti@2.4.2))
+      eslint-plugin-react-refresh:
+        specifier: ^0.4.19
+        version: 0.4.19(eslint@9.21.0(jiti@2.4.2))
+      globals:
+        specifier: ^15.15.0
+        version: 15.15.0
+      typescript:
+        specifier: ~5.7.3
+        version: 5.7.3
+      typescript-eslint:
+        specifier: ^8.24.1
+        version: 8.26.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3)
+      vite:
+        specifier: ^6.1.1
+        version: 6.2.0(@types/node@22.13.9)(jiti@2.4.2)
+
+  .playground/module-b:
+    dependencies:
+      reactmos:
+        specifier: workspace:*
+        version: link:../../packages/reactmos
+    devDependencies:
+      '@eslint/js':
+        specifier: ^9.20.0
+        version: 9.21.0
+      '@reactmos/cli':
+        specifier: workspace:*
+        version: link:../../packages/cli
+      '@types/react':
+        specifier: ^19.0.10
+        version: 19.0.10
+      '@types/react-dom':
+        specifier: ^19.0.4
+        version: 19.0.4(@types/react@19.0.10)
+      eslint:
+        specifier: ^9.20.1
+        version: 9.21.0(jiti@2.4.2)
+      eslint-plugin-react-hooks:
+        specifier: ^5.1.0
+        version: 5.2.0(eslint@9.21.0(jiti@2.4.2))
+      eslint-plugin-react-refresh:
+        specifier: ^0.4.19
+        version: 0.4.19(eslint@9.21.0(jiti@2.4.2))
+      globals:
+        specifier: ^15.15.0
+        version: 15.15.0
+      typescript:
+        specifier: ~5.7.3
+        version: 5.7.3
+      typescript-eslint:
+        specifier: ^8.24.1
+        version: 8.26.0(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3)
+      vite:
+        specifier: ^6.1.1
+        version: 6.2.0(@types/node@22.13.9)(jiti@2.4.2)
+
+  .playground/module-c:
+    dependencies:
+      reactmos:
+        specifier: workspace:*
+        version: link:../../packages/reactmos
+    devDependencies:
+      '@eslint/js':
+        specifier: ^9.20.0
+        version: 9.21.0
+      '@reactmos/cli':
+        specifier: workspace:*
+        version: link:../../packages/cli
       '@types/react':
         specifier: ^19.0.10
         version: 19.0.10

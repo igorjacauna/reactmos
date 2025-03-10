@@ -1,4 +1,4 @@
-export type { ModuleConfig } from '@reactmos/cli';
+export type { ModuleConfig, Hooks } from '@reactmos/cli';
 export * from 'virtual:modules';
 export { default as App } from './App';
 export * from './components';

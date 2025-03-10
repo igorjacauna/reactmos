@@ -8,7 +8,7 @@ const module: ModuleConfig = {
   routes: () => {
     return [
       {
-        path: '/welcome',
+        path: '/',
         Component: Welcome,
       },
     ];
