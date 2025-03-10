@@ -1,15 +1,17 @@
 # Introduction
 
-This template is a ready-to-use documentation template made with [Nuxt UI Pro](https://ui3.nuxt.dev/pro){rel="nofollow"}, a collection of premium components built on top of [Nuxt UI](https://ui3.nuxt.dev){rel="nofollow"} to create beautiful & responsive Nuxt applications in minutes.
+Reactmos comes from **REACT MOduleS**. The idea is to create SPA applications with React using separate modules. You can progressively expand your application.
 
-There are already many websites based on this template:
+This is a work in progress, and many things may change.
+
+For now, these are the implemented features:
 
 ::card-group
   :::card
   ---
   icon: i-simple-icons-nuxtdotjs
   target: _blank
-  title: Nuxt
+  title: Routes
   to: https://nuxt.com
   ---
   The Nuxt website
@@ -70,10 +72,10 @@ There are already many websites based on this template:
 
 This template includes a range of features designed to streamline documentation management:
 
-- **Powered by [Nuxt 3](https://nuxt.com){rel="nofollow"}**: Utilizes the latest Nuxt framework for optimal performance.
-- **Built with [Nuxt UI](https://ui3.nuxt.dev){rel="nofollow"} and [Nuxt UI Pro](https://ui3.nuxt.dev/pro){rel="nofollow"}**: Integrates a comprehensive suite of UI components.
-- **[MDC Syntax](https://content.nuxt.com/usage/markdown){rel="nofollow"} via [Nuxt Content](https://content.nuxt.com){rel="nofollow"}**: Supports Markdown with component integration for dynamic content.
-- **[Nuxt Studio](https://content.nuxt.com/docs/studio){rel="nofollow"} Compatible**: Offers integration with Nuxt Studio for content editing.
+- **Powered by** [**Nuxt 3**](https://nuxt.com){rel="nofollow"}: Utilizes the latest Nuxt framework for optimal performance.
+- **Built with** [**Nuxt UI**](https://ui3.nuxt.dev){rel="nofollow"} **and** [**Nuxt UI Pro**](https://ui3.nuxt.dev/pro){rel="nofollow"}: Integrates a comprehensive suite of UI components.
+- [**MDC Syntax**](https://content.nuxt.com/usage/markdown){rel="nofollow"} **via** [**Nuxt Content**](https://content.nuxt.com){rel="nofollow"}: Supports Markdown with component integration for dynamic content.
+- [**Nuxt Studio**](https://content.nuxt.com/docs/studio){rel="nofollow"} **Compatible**: Offers integration with Nuxt Studio for content editing.
 - **Auto-generated Sidebar Navigation**: Automatically generates navigation from content structure.
 - **Full-Text Search**: Includes built-in search functionality for content discovery.
 - **Optimized Typography**: Features refined typography for enhanced readability.

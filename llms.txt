@@ -8,7 +8,7 @@
 
 ## Getting Started
 
-- [Introduction](https://docs-template.nuxt.dev/getting-started): Welcome to Nuxt UI Pro documentation template.
+- [Introduction](https://docs-template.nuxt.dev/getting-started): Welcome to Reactmos documentation
 - [Installation](https://docs-template.nuxt.dev/getting-started/installation): Get started with Nuxt UI Pro documentation template.
 - [Usage](https://docs-template.nuxt.dev/getting-started/usage): Learn how to write and customize your documentation.
 
