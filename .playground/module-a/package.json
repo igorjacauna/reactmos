@@ -1,5 +1,5 @@
 {
-  "name": "playground",
+  "name": "module-a",
   "version": "0.0.1",
   "type": "module",
   "main": "src/module.config.ts",

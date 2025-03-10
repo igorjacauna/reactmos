@@ -1,22 +1,18 @@
-import { ModuleConfig } from 'reactmos';
+import type { ModuleConfig } from 'reactmos';
 import Welcome from './pages/Welcome';
 import App from './App';
 
 const module: ModuleConfig = {
   root: App,
-  moduleName: 'module-boilerplate',
+  moduleName: 'module-c',
+  extends: ['../module-b', '../module-a'],
   routes: () => {
     return [
       {
-        path: '/welcome',
+        path: '/module-c',
         Component: Welcome,
       },
     ];
-  },
-  hooks: {
-    'app:beforeRender': () => {
-      console.log('Before render')
-    }
   }
 }
 
