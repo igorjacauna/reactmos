@@ -186,9 +186,6 @@ importers:
 
   packages/reactmos:
     dependencies:
-      '@reactmos/cli':
-        specifier: workspace:*
-        version: link:../cli
       hookable:
         specifier: 5.5.3
         version: 5.5.3
@@ -208,6 +205,9 @@ importers:
       '@eslint/js':
         specifier: ^9.21.0
         version: 9.21.0
+      '@reactmos/cli':
+        specifier: workspace:*
+        version: link:../cli
       '@types/react':
         specifier: ^19.0.10
         version: 19.0.10

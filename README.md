@@ -107,6 +107,7 @@ Reactmos also provides the following functions:
 
 1. **`getRoutes`** - Retrieves all registered routes.
 2. **`getRoot`** - Returns the `App.tsx` root component.
+3. **`getExtras(moduleName)`** - Returns extra configuration in module configs
 
 ## Roadmap
 

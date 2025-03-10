@@ -13,6 +13,14 @@ const module: ModuleConfig = {
       },
     ];
   },
+  extras: {
+    menuEntries: [
+      {
+        label: 'Module A',
+        to: '/'
+      }
+    ]
+  }
 }
 
 export default module

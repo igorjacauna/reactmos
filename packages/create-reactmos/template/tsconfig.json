@@ -21,6 +21,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
+    "types": ["reactmos/src/virtual-modules.d.ts"]
   },
   "include": ["src"]
 }

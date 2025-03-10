@@ -46,10 +46,7 @@ export function getRoot() {
   return root || App;
 }
 
-export function getExtra(moduleName) {
-  if (extras[moduleName] === undefined) {
-    throw new Error(`Module ${moduleName} not found`);
-  }
+export function getExtras(moduleName) {
   return extras[moduleName];
 }
 

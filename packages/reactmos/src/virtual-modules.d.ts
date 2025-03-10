@@ -6,5 +6,6 @@ declare module 'virtual:modules' {
   const getRoutes: RoutesFn;
   const boot: () => Promise<void>;
   const getRoot: () =>() => JSX.Element;
-  export { getRoutes, boot, getRoot }
+  const getExtras: (moduleName: string) => Record<string, unknown> | undefined;
+  export { getRoutes, boot, getRoot, getExtras }
 }
