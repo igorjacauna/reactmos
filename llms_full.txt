@@ -1,0 +1,1495 @@
+# Introduction
+
+This template is a ready-to-use documentation template made with [Nuxt UI Pro](https://ui3.nuxt.dev/pro){rel="nofollow"}, a collection of premium components built on top of [Nuxt UI](https://ui3.nuxt.dev){rel="nofollow"} to create beautiful & responsive Nuxt applications in minutes.
+
+There are already many websites based on this template:
+
+::card-group
+  :::card
+  ---
+  icon: i-simple-icons-nuxtdotjs
+  target: _blank
+  title: Nuxt
+  to: https://nuxt.com
+  ---
+  The Nuxt website
+  :::
+
+  :::card
+  ---
+  icon: i-simple-icons-nuxtdotjs
+  target: _blank
+  title: Nuxt UI
+  to: https://ui3.nuxt.dev
+  ---
+  The documentation of `@nuxt/ui` and `@nuxt/ui-pro`
+  :::
+
+  :::card
+  ---
+  icon: i-simple-icons-nuxtdotjs
+  target: _blank
+  title: Nuxt Image
+  to: https://image.nuxt.com
+  ---
+  The documentation of `@nuxt/image`
+  :::
+
+  :::card
+  ---
+  icon: i-simple-icons-nuxtdotjs
+  target: _blank
+  title: Nuxt Content
+  to: https://content.nuxt.com
+  ---
+  The documentation of `@nuxt/content`
+  :::
+
+  :::card
+  ---
+  icon: i-simple-icons-nuxtdotjs
+  target: _blank
+  title: Nuxt Devtools
+  to: https://devtools.nuxt.com
+  ---
+  The documentation of `@nuxt/devtools`
+  :::
+
+  :::card
+  ---
+  icon: i-simple-icons-nuxtdotjs
+  target: _blank
+  title: Nuxt Hub
+  to: https://hub.nuxt.com
+  ---
+  The best place to manage your projects, environments and variables.
+  :::
+::
+
+## Key Features
+
+This template includes a range of features designed to streamline documentation management:
+
+- **Powered by [Nuxt 3](https://nuxt.com){rel="nofollow"}**: Utilizes the latest Nuxt framework for optimal performance.
+- **Built with [Nuxt UI](https://ui3.nuxt.dev){rel="nofollow"} and [Nuxt UI Pro](https://ui3.nuxt.dev/pro){rel="nofollow"}**: Integrates a comprehensive suite of UI components.
+- **[MDC Syntax](https://content.nuxt.com/usage/markdown){rel="nofollow"} via [Nuxt Content](https://content.nuxt.com){rel="nofollow"}**: Supports Markdown with component integration for dynamic content.
+- **[Nuxt Studio](https://content.nuxt.com/docs/studio){rel="nofollow"} Compatible**: Offers integration with Nuxt Studio for content editing.
+- **Auto-generated Sidebar Navigation**: Automatically generates navigation from content structure.
+- **Full-Text Search**: Includes built-in search functionality for content discovery.
+- **Optimized Typography**: Features refined typography for enhanced readability.
+- **Dark Mode**: Offers dark mode support for user preference.
+- **Extensive Functionality**: Explore the template to fully appreciate its capabilities.
+
+
+# Installation
+
+::tip{target="_blank" to="https://content.nuxt.com/templates/docs"}
+Use this template on Nuxt Studio and start your documentation in seconds.
+::
+
+## Quick Start
+
+You can start a fresh new project with:
+
+```bash [Terminal]
+npx nuxi init -t github:nuxt-ui-pro/docs
+```
+
+or create a new repository from GitHub:
+
+1. Open <https://github.com/nuxt-ui-pro/docs>{rel="nofollow"}
+2. Click on `Use this template` button
+3. Enter repository name and click on `Create repository from template` button
+4. Clone your new repository
+5. Install dependencies with your favorite package manager
+6. Start development server
+
+That's it! You can now start writing your documentation in the [`content/`](https://content.nuxt.com/usage/content-directory){rel="nofollow"} directory 🚀
+
+
+# Usage
+
+This is only a basic example of what you can achieve with [Nuxt UI Pro](https://ui.nuxt.com/pro/guide){rel="nofollow"}, you can tweak it to match your needs. The template uses several Nuxt modules underneath like [`@nuxt/content`](https://content.nuxt.com){rel="nofollow"} for the content and [`nuxt-og-image`](https://nuxtseo.com/og-image/getting-started/installation){rel="nofollow"} for social previews.
+
+::tip
+---
+target: _blank
+to: https://ui3.nuxt.dev/getting-started/installation/pro/nuxt
+---
+Learn more on how to take the most out of Nuxt UI Pro!
+::
+
+## Writing content
+
+You can just start writing `.md` or `.yml` files in the [`content/`](https://content.nuxt.com/usage/content-directory){rel="nofollow"} directory to have your pages updated. The navigation will be automatically generated in the left aside and in the mobile menu. You will also be able to go through your content with full-text search.
+
+## App Configuration
+
+In addition to `@nuxt/ui-pro` configuration through the `app.config.ts`, this template lets you customize the `Header`, `Footer` and the `Table of contents` components.
+
+### Header
+
+```ts [app.config.ts]
+export default defineAppConfig({
+  header: {
+    title: '',
+    to: '/',
+    // Logo configuration
+    logo: {
+      alt: '',
+      // Light mode
+      light: '',
+      // Dark mode
+      dark: ''
+    },
+    // Show or hide the search bar
+    search: true,
+    // Show or hide the color mode button
+    colorMode: true,
+    // Customize links
+    links: [{
+      'icon': 'i-simple-icons-github',
+      'to': 'https://github.com/nuxt-ui-pro/docs/tree/v3',
+      'target': '_blank',
+      'aria-label': 'GitHub'
+    }]
+  },
+})
+```
+
+### Footer
+
+```ts [app.config.ts]
+export default defineAppConfig({
+  footer: {
+    // Update bottom left credits
+    credits: `Copyright © ${new Date().getFullYear()}`,
+    // Show or hide the color mode button
+    colorMode: false,
+    // Customize links
+    links: [{
+      'icon': 'i-simple-icons-nuxtdotjs',
+      'to': 'https://nuxt.com',
+      'target': '_blank',
+      'aria-label': 'Nuxt Website'
+    }, {
+      'icon': 'i-simple-icons-discord',
+      'to': 'https://discord.com/invite/ps2h6QT',
+      'target': '_blank',
+      'aria-label': 'Nuxt UI on Discord'
+    }, {
+      'icon': 'i-simple-icons-x',
+      'to': 'https://x.com/nuxt_js',
+      'target': '_blank',
+      'aria-label': 'Nuxt on X'
+    }, {
+      'icon': 'i-simple-icons-github',
+      'to': 'https://github.com/nuxt/ui',
+      'target': '_blank',
+      'aria-label': 'Nuxt UI on GitHub'
+    }]
+  },
+})
+```
+
+### Table of contents
+
+```ts [app.config.ts]
+export default defineAppConfig({
+  toc: {
+    // Title of the main table of contents
+    title: 'Table of Contents',
+    // Customize links
+    bottom: {
+      // Title of the bottom table of contents
+      title: 'Community',
+      // URL of your repository content folder
+      edit: 'https://github.com/nuxt-ui-pro/docs/edit/v3/content',
+      links: [{
+        icon: 'i-lucide-star',
+        label: 'Star on GitHub',
+        to: 'https://github.com/nuxt/ui',
+        target: '_blank'
+      }, {
+        icon: 'i-lucide-book-open',
+        label: 'Nuxt UI Pro docs',
+        to: 'https://ui3.nuxt.dev/getting-started/installation/pro/nuxt',
+        target: '_blank'
+      }, {
+        icon: 'i-simple-icons-nuxtdotjs',
+        label: 'Purchase a license',
+        to: 'https://ui.nuxt.com/pro/purchase',
+        target: '_blank'
+      }]
+    }
+  }
+})
+```
+
+::tip{target="_blank" to="https://content.nuxt.com/docs/studio/config"}
+This template integrates with Nuxt Studio, providing a visual interface for editing your documentation - perfect for non-technical contributors.
+::
+
+
+# Markdown Syntax
+
+## Titles
+
+Use titles to introduce main sections. They structure your documentation and help users navigate content.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+## Titles
+
+#code
+```mdc
+## Titles
+```
+::
+
+### Subtitles
+
+Use subtitles to divide sections further. They create a more detailed content hierarchy for better readability.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+### Subtitles
+
+#code
+```mdc
+### Subtitles
+```
+::
+
+::tip
+Each title and subtitle creates an anchor and shows up automatically in the table of contents.
+::
+
+## Text Formatting
+
+Nuxt UI Pro supports most Markdown formatting options.
+
+| Style  | How to use   | Result     |
+| ------ | ------------ | ---------- |
+| Bold   | `**bold**`   | **Bold**   |
+| Italic | `*italic*`   | *Italic*   |
+| Strike | `~~strike~~` | ~~Strike~~ |
+
+Combine formatting for richer text styles and visual emphasis.
+
+| Style         | How to use          | Result            |
+| ------------- | ------------------- | ----------------- |
+| Bold Italic   | `**_bold italic_**` | ***Bold Italic*** |
+| Bold Strike   | `~~**bold**~~`      | ~~**Bold**~~      |
+| Italic Strike | `~~*italic*~~`      | ~~*Italic*~~      |
+
+For exponents, indices, or mathematical notations, use HTML `<sup>` and `<sub>` tags.
+
+| Style       | How to use               | Result      |
+| ----------- | ------------------------ | ----------- |
+| Superscript | `<sup>superscript</sup>` | superscript |
+| Subscript   | `<sub>subscript</sub>`   | subscript   |
+
+## Links
+
+Links connect different parts of your documentation and external resources, essential for user navigation and providing references.
+To create a link, wrap the link text in brackets `[]()`.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+[Nuxt UI Pro](https://ui3.nuxt.dev/getting-started/installation/pro/nuxt){rel="nofollow"}
+
+#code
+```mdc
+[Nuxt UI Pro](https://ui3.nuxt.dev/getting-started/installation/pro/nuxt)
+```
+::
+
+### Internal links
+
+For linking within your documentation, use root-relative paths like `/getting-started/installation`.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+[Installation](https://docs-template.nuxt.dev/getting-started/installation)
+
+#code
+```mdc
+[Installation](/getting-started/installation)
+```
+::
+
+## Lists
+
+Organize related items in a structured, readable format. Markdown supports unordered, ordered, and nested lists for various content needs.
+
+### Unordered
+
+Use unordered lists for items without a specific sequence. Start each item with a `-` symbol.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+- I'm a list item.
+- I'm another list item.
+- I'm the last list item.
+
+#code
+```mdc
+- I'm a list item.
+- I'm another list item.
+- I'm the last list item.
+```
+::
+
+### Ordered
+
+Use ordered lists when item order matters, like steps in a process. Start each item with a number.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+1. I'm a list item.
+2. I'm another list item.
+3. I'm the last list item.
+
+#code
+```mdc
+1. I'm a list item.
+2. I'm another list item.
+3. I'm the last list item.
+```
+::
+
+### Nested
+
+Create hierarchical lists with sub-items for complex structures. Indent sub-items by four spaces for nesting.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+- I'm a list item.
+  - I'm a nested list item.
+  - I'm another nested list item.
+- I'm another list item.
+
+#code
+```mdc
+- I'm a list item.
+  - I'm a nested list item.
+  - I'm another nested list item.
+- I'm another list item.
+```
+::
+
+## Tables
+
+Present structured data in rows and columns clearly. Tables are ideal for comparing data or listing properties.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+  - "[&>div]:*:w-full"
+---
+| Prop    | Default   | Type                                                                                                                                    |
+| ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`  |           | `string`{className="language-ts-type shiki shiki-themes material-theme-lighter material-theme material-theme-palenight" lang="ts-type"} |
+| `size`  | `md`      | `string`{className="language-ts-type shiki shiki-themes material-theme-lighter material-theme material-theme-palenight" lang="ts-type"} |
+| `color` | `neutral` | `string`{className="language-ts-type shiki shiki-themes material-theme-lighter material-theme material-theme-palenight" lang="ts-type"} |
+
+#code
+```mdc
+| Prop    | Default   | Type                     |
+|---------|-----------|--------------------------|
+| `name`  |           | `string`{lang="ts-type"} |
+| `size`  | `md`      | `string`{lang="ts-type"} |
+| `color` | `neutral` | `string`{lang="ts-type"} |
+```
+::
+
+## Blockquotes
+
+Highlight important quotations, citations, or emphasized text. Blockquotes visually distinguish quoted content.
+
+### Singleline
+
+Single-line blockquotes are best for short, impactful quotes or citations that fit within a single line. To create a single-line blockquote, add a `>` in front of a paragraph. Ideal for short and impactful quotes.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+> Nuxt UI Pro is a collection of Vue components, composables and utils built on top of Nuxt UI, oriented on structure and layout and designed to be used as building blocks for your app.
+
+#code
+```mdc
+> Nuxt UI Pro is a collection of Vue components, composables and utils built on top of Nuxt UI, oriented on structure and layout and designed to be used as building blocks for your app.
+```
+::
+
+### Multiline
+
+Multi-line blockquotes are suitable for longer quotes or when you need to include multiple paragraphs within a single quotation.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+> Nuxt UI Pro is a collection of Vue components, composables and utils built on top of Nuxt UI, oriented on structure and layout and designed to be used as building blocks for your app.
+>
+> Create beautiful, responsive, and accessible Vue applications with Nuxt UI Pro.
+
+#code
+```mdc
+> Nuxt UI Pro is a collection of Vue components, composables and utils built on top of Nuxt UI, oriented on structure and layout and designed to be used as building blocks for your app.
+> 
+> Create beautiful, responsive, and accessible Vue applications with Nuxt UI Pro.
+```
+::
+
+
+# Code Blocks
+
+## Basic
+
+### Inline Code
+
+Use inline code to display code snippets within text paragraphs. It's ideal for referencing code elements directly in sentences.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+`inline code`
+
+#code
+```mdc
+`inline code`
+```
+::
+
+### Code Blocks
+
+Use code blocks to display multi-line code snippets with syntax highlighting. Code blocks are essential for presenting code examples clearly.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+  - "[&>div]:*:w-full"
+---
+```ts
+export default defineNuxtConfig({
+  modules: ['@nuxt/ui-pro']
+})
+```
+
+#code
+````mdc
+```ts
+export default defineNuxtConfig({
+  modules: ['@nuxt/ui-pro']
+})
+```
+````
+::
+
+When writing a code-block, you can specify a filename that will be displayed on top of the code block. An icon will be automatically displayed based on the extension or the name.
+Filenames help users understand the code's location and purpose within a project.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+  - "[&>div]:*:w-full"
+---
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  modules: ['@nuxt/ui-pro']
+})
+```
+
+#code
+````mdc
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  modules: ['@nuxt/ui-pro']
+})
+```
+````
+::
+
+::tip
+Some icons are already defined by default, but you can add more in your `app.config.ts` through the `uiPro.prose.codeIcon` key:
+
+```ts [app.config.ts]
+export default defineAppConfig({
+  uiPro: {
+    prose: {
+      codeIcon: {
+        terminal: 'i-ph-terminal-window-duotone'
+      }
+    }
+  }
+})
+```
+::
+
+Every code-block has a built-in copy button that will copy the code to your clipboard.
+
+::tip
+You can change the icon in your `app.config.ts` through the `ui.icons.copy` and `ui.icons.copyCheck` keys:
+
+```ts [app.config.ts]
+export default defineAppConfig({
+  ui: {
+    icons: {
+      copy: 'i-lucide-copy',
+      copyCheck: 'i-lucide-copy-check'
+    }
+  }
+})
+```
+::
+
+#### Highlight Line
+
+To highlight lines of code, add `{}` around the line numbers you want to highlight.
+Line highlighting is useful for focusing users on important parts of code examples.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+  - "[&>div]:*:w-full"
+---
+```ts [nuxt.config.ts] {4-5}
+export default defineAppConfig({
+  ui: {
+    icons: {
+      copy: 'i-lucide-copy',
+      copyCheck: 'i-lucide-copy-check'
+    }
+  }
+})
+```
+
+#code
+````mdc
+```ts [nuxt.config.ts]{4-5}
+export default defineAppConfig({
+  ui: {
+    icons: {
+      copy: 'i-lucide-copy',
+      copyCheck: 'i-lucide-copy-check'
+    }
+  }
+})
+```
+````
+::
+
+## Advanced
+
+### CodeGroup
+
+Group code blocks in tabs using `code-group`. `code-group` is perfect for showing code examples in multiple languages or package managers.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+  - "[&>div]:*:w-full"
+---
+  :::code-group{className="w-full"}
+  ```bash [pnpm]
+  pnpm add @nuxt/ui-pro@next
+  ```
+  
+  ```bash [yarn]
+  yarn add @nuxt/ui-pro@next
+  ```
+  
+  ```bash [npm]
+  npm install @nuxt/ui-pro@next
+  ```
+  
+  ```bash [bun]
+  bun add @nuxt/ui-pro@next
+  ```
+  :::
+
+#code
+````mdc
+:::code-group
+
+```bash [pnpm]
+pnpm add @nuxt/ui-pro@next
+```
+
+```bash [yarn]
+yarn add @nuxt/ui-pro@next
+```
+
+```bash [npm]
+npm install @nuxt/ui-pro@next
+```
+
+```bash [bun]
+bun add @nuxt/ui-pro@next
+```
+
+::
+````
+::
+
+::note{to="https://docs-template.nuxt.dev/#pre"}
+Like the `ProsePre` component, the `CodeGroup` handles filenames, icons and copy button.
+::
+
+### CodeTree
+
+Display code blocks in a file tree view using `code-tree`. `code-tree` is excellent for showcasing project structures and file relationships.
+
+::code-preview{className="[&>div]:*:my-0,[&>div]:*:w-full"}
+  :::code-tree{default-value="app/app.config.ts"}
+  ```ts [nuxt.config.ts]
+  export default defineNuxtConfig({
+    modules: ['@nuxt/ui-pro'],
+  
+    future: {
+      compatibilityVersion: 4
+    },
+  
+    css: ['~/assets/css/main.css']
+  })
+  
+  ```
+  
+  ```css [app/assets/css/main.css]
+  @import "tailwindcss";
+  @import "@nuxt/ui-pro";
+  ```
+  
+  ```ts [app/app.config.ts]
+  export default defineAppConfig({
+    ui: {
+      colors: {
+        primary: 'sky',
+        colors: 'slate'
+      }
+    }
+  })
+  ```
+  
+  ```vue [app/app.vue]
+  <template>
+    <UApp>
+      <NuxtPage />
+    </UApp>
+  </template>
+  ```
+  
+  ```json [package.json]
+  {
+    "name": "nuxt-app",
+    "private": true,
+    "type": "module",
+    "scripts": {
+      "build": "nuxt build",
+      "dev": "nuxt dev",
+      "generate": "nuxt generate",
+      "preview": "nuxt preview",
+      "postinstall": "nuxt prepare",
+      "lint": "eslint .",
+      "lint:fix": "eslint --fix ."
+    },
+    "dependencies": {
+      "@iconify-json/lucide": "^1.2.18",
+      "@nuxt/ui-pro": "3.0.0-alpha.10",
+      "nuxt": "^3.15.1"
+    },
+    "devDependencies": {
+      "eslint": "9.20.1",
+      "typescript": "^5.7.2",
+      "vue-tsc": "^2.2.0"
+    }
+  }
+  ```
+  
+  ```json [tsconfig.json]
+  {
+    "extends": "./.nuxt/tsconfig.json"
+  }
+  ```
+  
+  ````md [README.md]
+  # Nuxt 3 Minimal Starter
+  
+  Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+  
+  ## Setup
+  
+  Make sure to install the dependencies:
+  
+  ```bash
+  # npm
+  npm install
+  
+  # pnpm
+  pnpm install
+  
+  # yarn
+  yarn install
+  
+  # bun
+  bun install
+  ```
+  
+  ## Development Server
+  
+  Start the development server on `http://localhost:3000`:
+  
+  ```bash
+  # npm
+  npm run dev
+  
+  # pnpm
+  pnpm run dev
+  
+  # yarn
+  yarn dev
+  
+  # bun
+  bun run dev
+  ```
+  
+  ## Production
+  
+  Build the application for production:
+  
+  ```bash
+  # npm
+  npm run build
+  
+  # pnpm
+  pnpm run build
+  
+  # yarn
+  yarn build
+  
+  # bun
+  bun run build
+  ```
+  
+  Locally preview production build:
+  
+  ```bash
+  # npm
+  npm run preview
+  
+  # pnpm
+  pnpm run preview
+  
+  # yarn
+  yarn preview
+  
+  # bun
+  bun run preview
+  ```
+  
+  Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+  ````
+  :::
+::
+
+::note
+---
+target: _blank
+to: https://ui3.nuxt.dev/getting-started/typography#codetree
+---
+Learn more about the `code-tree` component.
+::
+
+### `CodePreview`
+
+Use `code-preview` to show code output alongside the code. `code-preview` is ideal for interactive examples and demonstrating code results.
+Write the code to be previewed in a the `default` slot and the actual code in the `code` slot.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+  - "[&>div]:*:w-full"
+label: Preview
+---
+  :::code-preview
+  ---
+  className:
+    - "[&>div]:*:my-0"
+  ---
+  `inline code`
+  
+  #code
+  ```mdc
+  `inline code`
+  ```
+  :::
+
+#code
+````mdc
+::code-preview
+`inline code`
+
+#code
+```mdc
+`inline code`
+```
+::
+````
+::
+
+### `CodeCollapse`
+
+Use `code-collapse` for long code blocks to keep pages clean. `code-collapse` allows users to expand code blocks only when needed, improving readability.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+  - "[&>div]:*:w-full"
+---
+  :::code-collapse{className="[&>div]:my-0"}
+  ```css [main.css]
+  @import "tailwindcss";
+  @import "@nuxt/ui-pro";
+  
+  @theme {
+    --font-sans: 'Public Sans', sans-serif;
+  
+    --breakpoint-3xl: 1920px;
+  
+    --color-green-50: #EFFDF5;
+    --color-green-100: #D9FBE8;
+    --color-green-200: #B3F5D1;
+    --color-green-300: #75EDAE;
+    --color-green-400: #00DC82;
+    --color-green-500: #00C16A;
+    --color-green-600: #00A155;
+    --color-green-700: #007F45;
+    --color-green-800: #016538;
+    --color-green-900: #0A5331;
+    --color-green-950: #052E16;
+  }
+  ```
+  :::
+
+#code
+````mdc
+::code-collapse
+
+```css [main.css]
+@import "tailwindcss";
+@import "@nuxt/ui-pro";
+
+@theme {
+  --font-sans: 'Public Sans', sans-serif;
+
+  --breakpoint-3xl: 1920px;
+
+  --color-green-50: #EFFDF5;
+  --color-green-100: #D9FBE8;
+  --color-green-200: #B3F5D1;
+  --color-green-300: #75EDAE;
+  --color-green-400: #00DC82;
+  --color-green-500: #00C16A;
+  --color-green-600: #00A155;
+  --color-green-700: #007F45;
+  --color-green-800: #016538;
+  --color-green-900: #0A5331;
+  --color-green-950: #052E16;
+}
+```
+
+::
+````
+::
+
+
+# Prose Components
+
+### Accordion
+
+Use `accordion` and `accordion-item` to create collapsible content sections. Accordions are useful for organizing FAQs, expandable details, or grouped information in an interactive way.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+  :::accordion
+    ::::accordion-item
+    ---
+    icon: i-lucide-circle-help
+    label: What are the main considerations when upgrading to Nuxt UI v3?
+    ---
+    The transition to v3 involves significant changes, including new component structures, updated theming approaches, and revised TypeScript definitions. We recommend a careful, incremental upgrade process, starting with thorough testing in a development environment.
+    ::::
+  
+    ::::accordion-item
+    ---
+    icon: i-lucide-circle-help
+    label: Is Nuxt UI v3 compatible with standalone Vue projects?
+    ---
+    Nuxt UI is now compatible with Vue! You can follow the [installation guide](https://docs-template.nuxt.dev/getting-started/installation) to get started.
+    ::::
+  
+    ::::accordion-item{icon="i-lucide-circle-help" label="What about Nuxt UI Pro?"}
+    We've also rebuilt Nuxt UI Pro from scratch and released a `v3.0.0-alpha.x` package but it only contains the components to build this documentation yet. This will be a free update, so the license you buy now will be valid for v3. We're actively working to finish the rewrite of all Nuxt UI Pro components.
+    ::::
+  :::
+
+#code
+```mdc
+::accordion
+
+::accordion-item{label="What are the main considerations when upgrading to Nuxt UI v3?" icon="i-lucide-circle-help"}
+The transition to v3 involves significant changes, including new component structures, updated theming approaches, and revised TypeScript definitions. We recommend a careful, incremental upgrade process, starting with thorough testing in a development environment.
+::
+
+::accordion-item{label="Is Nuxt UI v3 compatible with standalone Vue projects?" icon="i-lucide-circle-help"}
+Nuxt UI is now compatible with Vue! You can follow the [installation guide](/getting-started/installation) to get started.
+::
+
+::accordion-item{label="What about Nuxt UI Pro?" icon="i-lucide-circle-help"}
+We've also rebuilt Nuxt UI Pro from scratch and released a `v3.0.0-alpha.x` package but it only contains the components to build this documentation yet. This will be a free update, so the license you buy now will be valid for v3. We're actively working to finish the rewrite of all Nuxt UI Pro components.
+::
+
+::
+```
+::
+
+### Badge
+
+Use badge to display status indicators or labels. Badges are great for highlighting version numbers, statuses, or categories within your content.
+
+::code-preview
+---
+label: Preview
+---
+  :::badge
+  **v3.0.0-alpha.10**
+  :::
+
+#code
+```mdc
+::badge
+**v3.0.0-alpha.10**
+::
+```
+::
+
+### Callout
+
+Use callout to emphasize important contextual information. Callouts draw attention to notes, tips, warnings, or cautions, making key information stand out.
+
+Customize with `icon` and `color` props or use `note`, `tip`, `warning`, `caution` shortcuts for pre-defined semantic styles.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+  - "[&>div]:*:w-full"
+---
+  :::callout
+  This is a `callout` with full **markdown** support.
+  :::
+
+#code
+```mdc
+::callout
+This is a `callout` with full **markdown** support.
+::
+```
+::
+
+::code-preview
+  :::div{className="flex,flex-col,gap-4,w-full"}
+    ::::note{className="w-full,my-0"}
+    Here's some additional information for you.
+    ::::
+  
+    ::::tip{className="w-full,my-0"}
+    Here's a helpful suggestion.
+    ::::
+  
+    ::::warning{className="w-full,my-0"}
+    Be careful with this action as it might have unexpected results.
+    ::::
+  
+    ::::caution{className="w-full,my-0"}
+    This action cannot be undone.
+    ::::
+  :::
+
+#code
+```mdc
+::note
+Here's some additional information.
+::
+
+::tip
+Here's a helpful suggestion.
+::
+
+::warning
+Be careful with this action as it might have unexpected results.
+::
+
+::caution
+This action cannot be undone.
+::
+```
+::
+
+### Card
+
+Use `card` to highlight content blocks. Cards are useful for showcasing features, resources, or related information in visually distinct and interactive containers.
+
+Customize with `title`, `icon`, and `color` props. Cards can also act as links using `<NuxtLink>` properties for navigation.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+  - "[&>div]:*:w-full"
+---
+  :::card
+  ---
+  icon: i-simple-icons-github
+  target: _blank
+  title: Dashboard
+  to: https://github.com/nuxt-ui-pro/dashboard
+  ---
+  A dashboard with multi-column layout.
+  :::
+
+#code
+```mdc
+::card
+---
+title: Dashboard
+icon: i-simple-icons-github
+to: https://github.com/nuxt-ui-pro/dashboard
+target: _blank
+---
+A dashboard with multi-column layout.
+::
+```
+::
+
+### CardGroup
+
+Use `card-group` to arrange cards in a grid layout. `card-group` is ideal for displaying collections of cards in a structured, visually appealing, and responsive grid.
+
+::code-preview
+  :::card-group{className="w-full"}
+    ::::card
+    ---
+    icon: i-simple-icons-github
+    target: _blank
+    title: Dashboard
+    to: https://github.com/nuxt-ui-pro/dashboard
+    ---
+    A dashboard with multi-column layout.
+    ::::
+  
+    ::::card
+    ---
+    icon: i-simple-icons-github
+    target: _blank
+    title: SaaS
+    to: https://github.com/nuxt-ui-pro/saas
+    ---
+    A template with landing, pricing, docs and blog.
+    ::::
+  
+    ::::card
+    ---
+    icon: i-simple-icons-github
+    target: _blank
+    title: Docs
+    to: https://github.com/nuxt-ui-pro/docs
+    ---
+    A documentation with `@nuxt/content`.
+    ::::
+  
+    ::::card
+    ---
+    icon: i-simple-icons-github
+    target: _blank
+    title: Landing
+    to: https://github.com/nuxt-ui-pro/landing
+    ---
+    A landing page you can use as starting point.
+    ::::
+  :::
+
+#code
+```mdc
+::card-group
+
+::card
+---
+title: Dashboard
+icon: i-simple-icons-github
+to: https://github.com/nuxt-ui-pro/dashboard
+target: _blank
+---
+A dashboard with multi-column layout.
+::
+
+::card
+---
+title: SaaS
+icon: i-simple-icons-github
+to: https://github.com/nuxt-ui-pro/saas
+target: _blank
+---
+A template with landing, pricing, docs and blog.
+::
+
+::card
+---
+title: Docs
+icon: i-simple-icons-github
+to: https://github.com/nuxt-ui-pro/docs
+target: _blank
+---
+A documentation with `@nuxt/content`.
+::
+
+::card
+---
+title: Landing
+icon: i-simple-icons-github
+to: https://github.com/nuxt-ui-pro/landing
+target: _blank
+---
+A landing page you can use as starting point.
+::
+
+::
+```
+::
+
+### Collapsible
+
+Use `collapsible` to hide and reveal content sections. `collapsible` is ideal for showing optional details, technical specifications, or less frequently needed information.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:w-full"
+---
+  :::collapsible
+  | Prop    | Default   | Type                                                                                                                                    |
+  | ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+  | `name`  |           | `string`{className="language-ts-type shiki shiki-themes material-theme-lighter material-theme material-theme-palenight" lang="ts-type"} |
+  | `size`  | `md`      | `string`{className="language-ts-type shiki shiki-themes material-theme-lighter material-theme material-theme-palenight" lang="ts-type"} |
+  | `color` | `neutral` | `string`{className="language-ts-type shiki shiki-themes material-theme-lighter material-theme material-theme-palenight" lang="ts-type"} |
+  :::
+
+#code
+```mdc
+::collapsible
+
+| Prop    | Default   | Type                     |
+|---------|-----------|--------------------------|
+| `name`  |           | `string`{lang="ts-type"} |
+| `size`  | `md`      | `string`{lang="ts-type"} |
+| `color` | `neutral` | `string`{lang="ts-type"} |
+
+::
+```
+::
+
+### Field
+
+Use `field` to describe a specific field, property, or parameter. `field` components are perfect for documenting API parameters, component props, or configuration options.
+
+::code-preview
+  :::field{required className="w-full" name="name" required="true" type="string"}
+  The `description` can be set as prop or in the default slot with full **markdown** support.
+  :::
+
+#code
+```mdc
+::field{name="name" type="string" required}
+The `description` can be set as prop or in the default slot with full **markdown** support.
+::
+```
+::
+
+### FieldGroup
+
+Use `field-group` to group related fields together in a list. `field-group` helps organize and structure documentation for multiple related fields or properties.
+
+::code-preview
+  :::field-group
+    ::::field{name="analytics" type="boolean"}
+    Default to `false` - Enables analytics for your project (coming soon).
+    ::::
+  
+    ::::field{name="blob" type="boolean"}
+    Default to `false` - Enables blob storage to store static assets, such as images, videos and more.
+    ::::
+  
+    ::::field{name="cache" type="boolean"}
+    Default to `false` - Enables cache storage to cache your server route responses or functions using Nitro's `cachedEventHandler` and `cachedFunction`
+    ::::
+  
+    ::::field{name="database" type="boolean"}
+    Default to `false` - Enables SQL database to store your application's data.
+    ::::
+  :::
+
+#code
+```mdc
+::field-group
+  ::field{name="analytics" type="boolean"}
+    Default to `false` - Enables analytics for your project (coming soon).
+  ::
+
+  ::field{name="blob" type="boolean"}
+    Default to `false` - Enables blob storage to store static assets, such as images, videos and more.
+  ::
+
+  ::field{name="cache" type="boolean"}
+    Default to `false` - Enables cache storage to cache your server route responses or functions using Nitro's `cachedEventHandler` and `cachedFunction`
+  ::
+
+  ::field{name="database" type="boolean"}
+    Default to `false` - Enables SQL database to store your application's data.
+  ::
+::
+```
+::
+
+### Icon
+
+Use `icon` to insert icons from icon libraries. Icons provide visual cues and enhance the user interface of your documentation.
+
+::code-preview
+  :::icon{name="i-simple-icons-nuxtdotjs"}
+  :::
+
+#code
+```mdc
+:icon{name="i-simple-icons-nuxtdotjs"}
+```
+::
+
+### Kbd
+
+Use `kbd` to display keyboard keys or shortcuts. `kbd` components clearly indicate keyboard inputs for instructions or command references.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+`` ``
+
+#code
+```mdc
+:kbd{value="meta"} :kbd{value="K"}
+```
+::
+
+### Tabs
+
+Use `tabs` and `tabs-item` to organize content into tabbed interfaces. Tabs are effective for separating content into logical sections, improving content discoverability and organization.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:my-0"
+---
+  :::tabs{className="w-full"}
+    ::::tabs-item{icon="i-lucide-code" label="Code"}
+    ```mdc
+    ::callout
+    Lorem velit voluptate ex reprehenderit ullamco et culpa.
+    ::
+    ```
+    ::::
+  
+    ::::tabs-item{icon="i-lucide-eye" label="Preview"}
+      :::::callout
+      Lorem velit voluptate ex reprehenderit ullamco et culpa.
+      :::::
+    ::::
+  :::
+
+#code
+````mdc
+::tabs
+
+:::tabs-item{label="Code" icon="i-lucide-code"}
+
+```mdc
+::callout
+Lorem velit voluptate ex reprehenderit ullamco et culpa.
+::
+```
+
+:::
+
+:::tabs-item{label="Preview" icon="i-lucide-eye"}
+
+::callout
+Lorem velit voluptate ex reprehenderit ullamco et culpa.
+::
+
+:::
+
+::
+````
+::
+
+### Steps
+
+Use `steps` to create step-by-step guides from document headings. `steps` component automatically numbers headings, creating a numbered guide for processes and tutorials.
+
+Set the `level` prop to define the heading level to include in the step-by-step guide.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:w-full"
+---
+  :::steps{level="4"}
+  #### Add the Nuxt UI Pro module in your `nuxt.config.ts`{className="language-ts-type shiki shiki-themes material-theme-lighter material-theme material-theme-palenight" lang="ts-type"}
+  
+  ```ts [nuxt.config.ts]
+  export default defineNuxtConfig({
+    modules: ['@nuxt/ui-pro']
+  })
+  ```
+  
+  #### Import Tailwind CSS and Nuxt UI Pro in your CSS
+  
+  ```css [assets/css/main.css]
+  @import "tailwindcss";
+  @import "@nuxt/ui-pro";
+  ```
+  :::
+
+#code
+````mdc
+::steps{level="4"}
+
+#### Add the Nuxt UI Pro module in your `nuxt.config.ts`{lang="ts-type"}
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  modules: ['@nuxt/ui-pro']
+})
+```
+
+#### Import Tailwind CSS and Nuxt UI Pro in your CSS
+
+```css [assets/css/main.css]
+@import "tailwindcss";
+@import "@nuxt/ui-pro";
+```
+
+::
+````
+::
+
+
+# Images and Embeds
+
+## Image
+
+### Using Markdown
+
+Display images using standard Markdown syntax. Markdown images are simple to implement for basic image display.
+
+::code-preview
+![Nuxt Social Image](https://nuxt.com/new-social.jpg)
+
+#code
+```mdc
+![Nuxt Social Image](https://nuxt.com/new-social.jpg)
+```
+::
+
+Or with your local images
+
+::code-preview
+![Social Card](https://docs-template.nuxt.dev/social-card.png)
+
+#code
+```mdc
+![Social Card](/social-card.png)
+```
+::
+
+::note
+If [`@nuxt/image`](https://image.nuxt.com/get-started/installation){rel="nofollow"} is installed, the `<NuxtImg>` component will be used instead of the native `img` tag.
+::
+
+### Using Embeds
+
+Use embeds for more image customization. Embeds offer greater control over image attributes like size and styling.
+
+::code-preview
+![Nuxt Social Image](https://nuxt.com/new-social.jpg){height="150"}
+
+#code
+```mdc
+:img{src="https://nuxt.com/new-social.jpg" alt="Nuxt Social Image" height="150"}
+```
+::
+
+## Embeds and HTML elements
+
+Embeds allow adding various HTML elements like videos and iframes. This feature extends documentation capabilities to include interactive and multimedia content.
+
+::code-preview
+---
+className:
+  - "[&>div]:*:w-full"
+---
+[YouTube video player](https://www.youtube-nocookie.com/embed/_eQxomah-nA?si=pDSzchUBDKb2NQu7)
+
+#code
+```mdc
+:iframe{src="https://www.youtube-nocookie.com/embed/_eQxomah-nA?si=pDSzchUBDKb2NQu7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="aspect-ratio: 16/9;"}
+```
+::
