@@ -5,6 +5,8 @@ Reactmos is a small project, primarily a conceptual approach, inspired by [Nuxt 
 > [!NOTE]  
 > This project is a Work In Progress and currently supports only Single Page Applications (SPA).
 
+See [documentation](https://reactmos.dev)
+
 ## CLI
 
 We provide a CLI to help run the development server and build the final bundle.
