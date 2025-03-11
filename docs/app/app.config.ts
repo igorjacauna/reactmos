@@ -1,7 +1,7 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: 'green',
+      primary: 'reactmos-blue',
       neutral: 'slate'
     }
   },
@@ -17,12 +17,12 @@ export default defineAppConfig({
     siteName: 'Reactmos - Build React SPAs with modules'
   },
   header: {
-    title: '',
+    title: 'Reactmos',
     to: '/',
     logo: {
       alt: '',
-      light: '',
-      dark: ''
+      light: '/light.png',
+      dark: '/dark.png'
     },
     search: true,
     colorMode: true,
@@ -47,7 +47,7 @@ export default defineAppConfig({
     title: 'Table of Contents',
     bottom: {
       title: 'Community',
-      edit: 'https://github.com/nuxt-ui-pro/docs/edit/v3/content',
+      edit: 'https://github.com/igorjacauna/reactmos/docs/content',
       links: [{
         icon: 'i-lucide-star',
         label: 'Star on GitHub',

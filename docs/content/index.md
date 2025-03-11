@@ -38,7 +38,7 @@ REACT MOduleS - React SPA with modules
   :::u-button
   ---
   color: neutral
-  icon: i-simple-icons-github
+  icon: i-simple-icons-stackblitz
   size: xl
   target: _blank
   to: https://stackblitz.com/edit/vitejs-vite-tximhgze?file=src%2Fmodule.config.ts
@@ -48,8 +48,3 @@ REACT MOduleS - React SPA with modules
   :::
 ::
 
-::u-page-section
-::
-
-::u-page-section
-::

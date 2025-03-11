@@ -6,15 +6,15 @@
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+  --color-reactmos-blue-50: #eefbfd;
+  --color-reactmos-blue-100: #d4f3f9;
+  --color-reactmos-blue-200: #aee6f3;
+  --color-reactmos-blue-300: #77d2e9;
+  --color-reactmos-blue-400: #38b5d8;
+  --color-reactmos-blue-500: #1c97bd;
+  --color-reactmos-blue-600: #1a7aa0;
+  --color-reactmos-blue-700: #1c6382;
+  --color-reactmos-blue-800: #1f526b;
+  --color-reactmos-blue-900: #1e445b;
+  --color-reactmos-blue-950: #0e2c3e;
 }
