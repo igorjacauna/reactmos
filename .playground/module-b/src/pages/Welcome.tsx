@@ -8,6 +8,7 @@ export default function Welcome() {
     <div>
       <h1>Welcome to module B</h1>
       <img src={reactLogo} alt="React logo" />
+      <img src="/logo.png" alt="Reactmos logo" />
     </div>
   )
 }
