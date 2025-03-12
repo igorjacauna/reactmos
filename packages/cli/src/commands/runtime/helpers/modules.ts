@@ -1,29 +1,46 @@
-import { resolve } from 'pathe';
+import { dirname, resolve } from 'pathe';
 import { readFileSync } from 'node:fs';
-import type { ParseAst } from 'rollup';
 import { transform } from 'esbuild';
+import { createRequire } from 'module';
+import { parse } from 'acorn';
 
-export async function getExtends(parser: ParseAst) {
+const require = createRequire(import.meta.url);
+
+export async function getExtends() {
   const code = readFileSync(resolve(process.cwd(), `src/module.config.ts`), 'utf-8');
   const result = await transform(code, {
     loader: 'ts',
     target: 'esnext'
   });
-  const ast = parser(result.code, {
-    jsx: true,
-  });
+  const ast = customParser(result.code);
 
   const exportDefaultObject = findExportDefaultObject(ast);
 
-  const extendsArray = exportDefaultObject
+  return exportDefaultObject
     ? extractExtendsFromObject(exportDefaultObject)
     : [];
+}
+
+export async function getExtendsConfigs() {
+  const extendsArray = await getExtends();
 
   return extendsArray.map((ext) => {
     if (ext.startsWith('.')) {
       return resolve(process.cwd(), ext, 'src/module.config');
     }
     return ext;
+  });
+}
+
+export async function getExtendsDir() {
+  const extendsArray = await getExtends();
+
+  return extendsArray.map((ext) => {
+    if (ext.startsWith('.')) {
+      return resolve(process.cwd(), ext);
+    }
+    const appPackageJson = require.resolve(`${ext}/package.json`);
+    return dirname(appPackageJson);
   });
 }
 
@@ -73,4 +90,12 @@ function findExportDefaultObject(ast: any): any | null {
     }
   }
   return null;
+}
+
+
+export function customParser(code: string) {
+  return parse(code, {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
+  });
 }

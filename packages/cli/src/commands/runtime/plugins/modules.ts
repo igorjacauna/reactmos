@@ -3,7 +3,7 @@ import { dirname, resolve } from 'pathe'
 import fs from 'node:fs'
 import { fileURLToPath } from 'url';
 import ejs from 'ejs';
-import { getExtends } from '../helpers/modules';
+import { getExtendsConfigs } from '../helpers/modules';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -24,7 +24,7 @@ export default function modulesPlugin(): Plugin {
 
     async load(id) {
       if (id !== resolvedVirtualModuleId) return
-      const extendModules = await getExtends(this.parse);
+      const extendModules = await getExtendsConfigs();
       const template = fs.readFileSync(resolve(__dirname, './templates/modules.ejs'), 'utf-8');
       const code = ejs.render(template, { extendModules });
       return code
