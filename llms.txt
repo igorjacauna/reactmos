@@ -11,3 +11,4 @@
 - [Introduction](https://reactmos.dev/getting-started): Welcome to Reactmos documentation
 - [Installation](https://reactmos.dev/getting-started/installation): Get started with Reactmos.
 - [Usage](https://reactmos.dev/getting-started/usage): Learn how write and extends modules.
+- [Modules](https://reactmos.dev/getting-started/modules): How modules works

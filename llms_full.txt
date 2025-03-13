@@ -45,7 +45,6 @@ For now, these are the implemented features:
 
 We have planned the following for the future:
 
-- **publicDir**: Use modules public directories to serve static assets
 - **loadingHTML**: Use a HTML file as a loading screen until the boot proccess finish. This can be overridden by a module.
 - Anything else...
 
@@ -131,7 +130,7 @@ export default {
 Learn more about root component
 ::
 
-### Hooks
+## Hooks
 
 Your module can configure lifecycle hooks to run like this:
 
@@ -149,7 +148,7 @@ export default {
 Learn more about hooks usage
 ::
 
-### Extends
+## Extends
 
 To extends a module, just add:
 
@@ -167,15 +166,103 @@ When using a path, it is relative to the project root and not the `src` director
 Learn more about module extends
 ::
 
-### Extra configs
+## Extra configs
 
 If you want to share something with other modules, you can do it like this:
 
 ```ts [module.config.ts]
 export default {
+  moduleName: 'module-xpto',
   extras: {
     menuEntries: [],
     extFn() {}
   }
 }
+```
+
+In another módule you can use:
+
+```ts
+import { getExtras } from 'reactmos';
+
+const { extFn, menuEntries } = getExtras('module-xpto');
+```
+
+
+# Modules
+
+## Configuration file
+
+A Reactmos module uses its configuration file as the entry point.
+
+In `package.json`, ensure the `main` property references the `src/module.config.ts` file.
+
+```json
+{
+  "main": "./src/module.config.ts"
+}
+```
+
+The `module.config.ts` contains
+
+- `moduleName`: To identify the module
+- `routes`: Routes from the module
+- `hooks`: The module can listen the lifecycle hooks to run some code
+- `extras`: Anything else that can be shared with other modules
+
+::tip
+See `ModuleConfig` type in [source code](https://github.com/igorjacauna/reactmos/blob/main/packages/cli/src/types.ts#L13){rel="nofollow"}
+::
+
+## Helper functions
+
+Reactmos provide some functions to work with modules
+
+### `getExtras`
+
+Returns some extra config for specific module or `undefined`
+
+```ts
+import { getExtras } from 'reactmos'
+
+const moduleExtras = getExtras('module-name')
+```
+
+### `getRoutes`
+
+Returns all routes registered
+
+```ts [Routes.tsx]
+import { getRoutes } from 'reactmos'
+import { useRoutes } from 'react-router'
+
+export default function Routes() {
+  const routes = getRoutes()
+  return useRoutes(routes)
+}
+```
+
+### `getModules`
+
+Returns all modules configurations in a object where the key is the module name and value
+is the config it self
+
+```ts
+import { getModules } from 'reactmos'
+
+const modules = getModules();
+
+console.log(modules)
+```
+
+### `getModuleConfig`
+
+Returns the configuration of specific module
+
+```ts
+import { getModuleConfig } from 'reactmos'
+
+const modules = getModules('module-name');
+
+console.log(modules.extras, modules.routes)
 ```
