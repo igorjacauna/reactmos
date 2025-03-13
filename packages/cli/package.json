@@ -1,6 +1,6 @@
 {
   "name": "@reactmos/cli",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "",
   "type": "module",
   "bin": {
@@ -12,6 +12,14 @@
     "src/virtual-modules.d.ts"
   ],
   "types": "src/types.ts",
+  "exports": {
+    ".": {
+      "types": "./src/types.ts"
+    },
+    "./modules": {
+      "types": "./src/virtual-modules.d.ts"
+    }
+  },
   "scripts": {
     "build": "unbuild",
     "dev": "node ./bin/reactmox.mjs dev"

@@ -1,12 +1,22 @@
 {
   "name": "reactmos",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "type": "module",
   "main": "src/index.ts",
   "files": [
     "*"
   ],
   "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    },
+    "./modules": {
+      "types": "./src/modules.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "dependencies": {
     "hookable": "5.5.3",
     "react": "^19.0.0",
