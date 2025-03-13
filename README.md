@@ -114,5 +114,6 @@ Reactmos also provides the following functions:
 ## Roadmap
 
 - [x] Support for extending routes/pages  
-- [ ] Support for extending the `public` directory  
+- [x] Support for extending the `public` directory
+- [x] Share custom configs with other modules
 - [ ] Additional extension capabilities?  
