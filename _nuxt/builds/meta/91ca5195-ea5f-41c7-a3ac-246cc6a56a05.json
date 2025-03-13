@@ -1,0 +1,1 @@
+{"id":"91ca5195-ea5f-41c7-a3ac-246cc6a56a05","timestamp":1741906102762,"matcher":{"static":{"/api/content/landing/database.sql":{"prerender":true},"/api/content/docs/database.sql":{"prerender":true}},"wildcard":{},"dynamic":{}},"prerendered":["/"]}
