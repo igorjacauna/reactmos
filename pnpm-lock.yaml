@@ -152,6 +152,9 @@ importers:
       citty:
         specifier: ^0.1.6
         version: 0.1.6
+      defu:
+        specifier: ^6.1.4
+        version: 6.1.4
       ejs:
         specifier: ^3.1.10
         version: 3.1.10

@@ -12,14 +12,14 @@ let initialized = false;
 let routes = [];
 let root = null;
 let extras = {};
-let modules = [];
+let modules = {};
 
 export async function boot() {
   routes = (await Promise.resolve(moduleConfig.routes?.())) || [];
   hooks.addHooks(moduleConfig.hooks);
   root = moduleConfig.root;
   extras[moduleConfig.moduleName] = moduleConfig.extras;
-  modules.push(moduleConfig.moduleName);
+  modules[moduleConfig.moduleName] = moduleConfig;
 
 <% if (extendModules && extendModules.length) { %>
   <% extendModules.forEach(function(dep, index) { %>
@@ -27,7 +27,7 @@ export async function boot() {
   routes = routes.concat(depRoutes<%= index %>);
   hooks.addHooks(depConfig<%= index %>.hooks);
   extras[depConfig<%= index %>.moduleName] = depConfig<%= index %>.extras;
-  modules.push(depConfig<%= index %>.moduleName);
+  modules[depConfig<%= index %>.moduleName] = depConfig<%= index %>;
 
   if (!root) {
     root = depConfig<%= index %>.root;
@@ -55,6 +55,10 @@ export function getExtras(moduleName) {
 
 export function getModules() {
   return modules;
+}
+
+export function getModuleConfig(moduleName) {
+  return modules[moduleName];
 }
 
 boot();

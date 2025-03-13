@@ -1,13 +1,13 @@
 import { dirname, resolve } from 'pathe';
-import { readFileSync } from 'node:fs';
 import { transform } from 'esbuild';
 import { createRequire } from 'module';
 import { parse } from 'acorn';
+import { existsSync, readFileSync } from 'fs-extra';
 
 const require = createRequire(import.meta.url);
 
 export async function getExtends() {
-  const code = readFileSync(resolve(process.cwd(), `src/module.config.ts`), 'utf-8');
+  const code = readHostConfigFile();
   const result = await transform(code, {
     loader: 'ts',
     target: 'esnext'
@@ -93,9 +93,20 @@ function findExportDefaultObject(ast: any): any | null {
 }
 
 
-export function customParser(code: string) {
+function customParser(code: string) {
   return parse(code, {
     ecmaVersion: 'latest',
     sourceType: 'module'
   });
+}
+
+function readHostConfigFile() {
+  let configPath = resolve(process.cwd(), `src/module.config.ts`);
+  if (!existsSync(configPath)) {
+    configPath = resolve(process.cwd(), `src/module.config.tsx`);
+  }
+  if (!existsSync(configPath)) {
+    throw new Error(`Cannot find module.config.ts or module.config.tsx in ${process.cwd()}/src`);
+  }
+  return readFileSync(configPath, 'utf-8');
 }

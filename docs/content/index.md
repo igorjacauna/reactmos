@@ -1,8 +1,7 @@
 ---
 seo:
-  title: Nuxt UI Pro - Docs template
-  description: Nuxt UI Pro is a collection of premium Vue components built on top
-    of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+  title: REACT MOduleS - React SPA with modules
+  description: Reactmos is a lightweight framework for building modular React SPAs, making them more manageable and easier to maintain.
 ---
 
 ::u-page-hero
