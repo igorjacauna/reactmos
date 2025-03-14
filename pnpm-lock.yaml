@@ -219,6 +219,9 @@ importers:
       vite:
         specifier: ^6.2.0
         version: 6.2.0(@types/node@22.13.9)(jiti@2.4.2)
+      vite-plugin-react-modules:
+        specifier: workspace:*
+        version: link:../plugin
     devDependencies:
       '@types/ejs':
         specifier: ^3.1.5

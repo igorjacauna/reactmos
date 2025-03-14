@@ -1,7 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { getRoot } from 'virtual:modules';
-import { hooks } from './runtime';
+import { boot, hooks, getRoot } from 'virtual:modules';
 
 async function init() {
   hooks.callHook('app:init');
@@ -15,4 +14,4 @@ async function init() {
   hooks.callHook('app:afterRender');
 }
 
-hooks.hook('app:afterBoot', init);
+boot(init);

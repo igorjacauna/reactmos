@@ -12,8 +12,7 @@ declare module 'virtual:modules' {
     extras?: ModuleExtras;
   };
 
-  export interface Hook {}
-
+  export interface Hooks {}
   export const hooks: Hookable<Hooks>;
 
   export const getRoutes: () => RouteObject[];
