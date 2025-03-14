@@ -1,0 +1,45 @@
+{
+  "name": "vite-plugin-react-modules",
+  "version": "1.1.0",
+  "description": "A Vite plugin to build React SPAs with modules",
+  "type": "module",
+  "keywords": [
+    "vite",
+    "react",
+    "modules",
+    "spa"
+  ],
+  "author": "Igor Jacaúna <igor.jacauna@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igorjacauna/reactmos"
+  },
+  "license": "MIT",
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./modules": {
+      "types": "./src/virtual-modules.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "unbuild"
+  },
+  "devDependencies": {
+    "unbuild": "^3.5.0",
+    "vite": "^6.2.2"
+  },
+  "dependencies": {
+    "acorn": "^8.14.1",
+    "ejs": "^3.1.10",
+    "esbuild": "^0.25.0",
+    "fs-extra": "^11.3.0",
+    "hookable": "5.5.3",
+    "pathe": "^2.0.3",
+    "react-router": "^7.2.0"
+  }
+}
