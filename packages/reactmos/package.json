@@ -1,6 +1,11 @@
 {
   "name": "reactmos",
   "version": "0.5.0",
+  "author": "Igor Jacaúna <igor.jacauna@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igorjacauna/reactmos"
+  },
   "type": "module",
   "main": "src/index.ts",
   "files": [
