@@ -5,7 +5,8 @@ import App from './App';
 const module: ModuleConfig = {
   root: App,
   moduleName: 'module-a',
-  routes: () => {
+  routes: async () => {
+    await new Promise(resolve => setTimeout(resolve, 5000));
     return [
       {
         path: '/',

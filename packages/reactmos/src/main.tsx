@@ -1,6 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { boot, hooks, getRoot } from 'virtual:modules';
+import loadingHtml from 'virtual:loading-html';
+
+document.getElementById('root')!.innerHTML = loadingHtml;
 
 async function init() {
   hooks.callHook('app:init');

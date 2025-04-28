@@ -1,5 +1,6 @@
+import loadingHTML from './plugins/loadingHTML';
 import modules from './plugins/modules';
 
 export default function reactModules() {
-  return [modules()];
+  return [loadingHTML(), modules()];
 }

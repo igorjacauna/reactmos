@@ -4,10 +4,10 @@ export default defineBuildConfig({
   entries: [
     'src/index',
     {
-      builder: "copy",
+      builder: 'copy',
       input: 'src/commands/runtime/plugins/templates',
       pattern: '**/*.ejs',
-      outDir: 'dist/shared/templates'
+      outDir: 'dist/shared/templates',
     },
   ],
 });

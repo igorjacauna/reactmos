@@ -22,3 +22,8 @@ declare module 'virtual:modules' {
   export const getModuleConfig: (moduleName: string) => ModuleConfig | undefined;
   export const boot: (callback: () => void) => void;
 }
+
+declare module 'virtual:loading-html' {
+  const loadingHtml: string;
+  export default loadingHtml;
+}
