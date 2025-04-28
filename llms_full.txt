@@ -1,10 +1,6 @@
 # Introduction
 
-Reactmos comes from **REACT MOduleS**. The idea is to create SPA applications with React using separate modules. You can progressively expand your application.
-
-::warning
-Reactmos is under heavy development. Use with caution. Many things may change
-::
+Reactmos comes from **REACT MOduleS**. The idea is to create SPA applications with React using separate modules. You can progressively expand your application. You can run each module individually and independently.
 
 For now, these are the implemented features:
 
@@ -41,19 +37,8 @@ For now, these are the implemented features:
   :::
 ::
 
-## Roadmap
-
-We have planned the following for the future:
-
-- **loadingHTML**: Use a HTML file as a loading screen until the boot proccess finish. This can be overridden by a module.
-- Anything else...
-
 
 # Installation
-
-::warning
-Reactmos is under heavy development. Use with caution.
-::
 
 ## Quick Start
 
@@ -88,10 +73,6 @@ That's it! You can now start writing your application!
 # Usage
 
 This is only a basic example of what you can achieve with Reactmos, you can tweak it to match your needs.
-
-::warning
-Reactmos is under heavy development. Use with caution.
-::
 
 ## Configure routes
 
