@@ -22,7 +22,7 @@ orientation: horizontal
 REACT MOduleS - React SPA with modules
 
 #description
-**Reactmos is a lightweight framework for building modular React SPAs, making them more manageable and easier to maintain.**
+**Reactmos is a lightweight framework for building modular React SPAs, making them more manageable and easier to maintain. You can run each module individually and independently.**
 
 #links
   :::u-button
