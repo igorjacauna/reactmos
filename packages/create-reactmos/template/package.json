@@ -10,11 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "reactmos": "^0.6.0"
+    "reactmos": "^0.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.20.0",
-    "@reactmos/cli": "^0.10.0",
+    "@reactmos/cli": "^0.10.2",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "eslint": "^9.20.1",

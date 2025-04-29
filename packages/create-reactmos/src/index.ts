@@ -1,5 +1,4 @@
 import { defineCommand, runMain } from 'citty';
-import { execSync } from 'child_process';
 import { consola } from 'consola';
 import { existsSync, renameSync, mkdirSync, cpSync } from 'fs';
 import { join, dirname } from 'path';
@@ -27,7 +26,7 @@ const main = defineCommand({
     const targetDir = join(process.cwd(), args.name);
 
     if (existsSync(targetDir)) {
-      consola.error(`Dir ${args.name} alredy exists.`);
+      consola.error(`Dir ${args.name} already exists.`);
       process.exit(1);
     }
 
@@ -53,11 +52,7 @@ const main = defineCommand({
       }
     });
 
-    consola.info('📦 Installing dependêncies...');
-    execSync(`cd ${args.name} && pnpm install`, { stdio: 'inherit' });
-
     consola.success('Project created!');
-    consola.info(`cd ${args.name} && pnpm dev`);
   },
 });
 

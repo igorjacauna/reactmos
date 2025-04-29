@@ -1,6 +1,6 @@
 {
   "name": "create-reactmos",
-  "version": "0.1.20",
+  "version": "0.1.24",
   "description": "Create extendable React modules",
   "type": "module",
   "bin": {
