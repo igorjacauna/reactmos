@@ -10,7 +10,7 @@ orientation: horizontal
 ---
   :::prose-pre
   ---
-  code: npx nuxi init -t github:nuxt-ui-pro/docs
+  code: pnpm create reactmos my-module
   filename: Terminal
   ---
   ```bash
